@@ -1,0 +1,44 @@
+package com.hvo.requests.directory;
+
+import com.hvo.models.RequestMethod;
+import com.hvo.requests.API;
+import com.hvo.requests.AbstractRequest;
+import org.apache.http.client.methods.HttpGet;
+
+public class GetDirectoryRequest extends AbstractRequest {
+
+    private final String url;
+    private final String requestMethod = RequestMethod.GET.toString();
+    private final String accessToken;
+
+    public GetDirectoryRequest(String accessToken, String directoryId) {
+        this.accessToken = accessToken;
+        this.url = new StringBuilder()
+                .append(API.FILES)
+                .append("/")
+                .append(directoryId)
+                .append("?fields=*")
+                .toString();
+        logCurl();
+    }
+
+    @Override
+    protected String getCurl() {
+        return new StringBuilder()
+                .append("curl " + url)
+                .append(" --request " + requestMethod)
+                .append(" --verbose ")
+                .append(" --header 'Authorization: Bearer " + accessToken)
+                .append("'")
+                .append(" --header 'Accept: application/json'")
+                .toString();
+    }
+
+    @Override
+    public HttpGet getRequest() {
+        HttpGet httpGet = new HttpGet(url);
+        httpGet.setHeader("Accept", "application/json");
+        httpGet.setHeader("Authorization", "Bearer " + accessToken);
+        return httpGet;
+    }
+}
