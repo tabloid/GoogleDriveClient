@@ -2,7 +2,8 @@ package com.hvo.requests.token;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.models.RequestMethod;
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
@@ -19,7 +20,7 @@ public class CreateTokenRequest extends AbstractRequest {
     private final String requestMethod = RequestMethod.POST.toString();
     private final String data;
 
-    public CreateTokenRequest(GoogleCredential credential) {
+    public CreateTokenRequest(GoogleCredentials credential) {
         String signedJwt = createJWT(credential);
         this.data = new StringBuilder()
                 .append("grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&")
@@ -48,15 +49,15 @@ public class CreateTokenRequest extends AbstractRequest {
                 .toString();
     }
 
-    private String createJWT(GoogleCredential credential) {
-        String issuer = credential.getServiceAccountId();
-        String audience = credential.getTokenServerEncodedUrl();
+    private String createJWT(GoogleCredentials credential) {
+        String issuer = ((ServiceAccountCredentials) credential).getClientEmail();
+        String audience = ((ServiceAccountCredentials) credential).getTokenServerUri().toString();
 
         long now = System.currentTimeMillis();
         Date issuedAt = new Date(now);
         Date expiresAt = new Date(now + 3600);
 
-        PrivateKey privateKey = credential.getServiceAccountPrivateKey();
+        PrivateKey privateKey = ((ServiceAccountCredentials) credential).getPrivateKey();
         Algorithm algorithm = Algorithm.RSA256(null, (RSAPrivateKey) privateKey);
 
         String signedJwt = JWT.create()

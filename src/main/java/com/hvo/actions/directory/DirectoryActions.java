@@ -1,22 +1,22 @@
 package com.hvo.actions.directory;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.hvo.actions.token.CreateTokenAction;
 import com.hvo.responses.directory.CreateDirectoryResponse;
 import com.hvo.responses.directory.DeleteDirectoryResponse;
-import com.hvo.responses.token.CreateTokenResponse;
 import com.hvo.responses.directory.GetDirectoryListResponse;
 import com.hvo.responses.directory.GetDirectoryResponse;
+import com.hvo.responses.token.CreateTokenResponse;
 
 public class DirectoryActions {
 
-    private String accessToken;
+    private final String accessToken;
 
-    public DirectoryActions(GoogleCredential googleCredential) {
+    public DirectoryActions(GoogleCredentials googleCredential) {
         this.accessToken = createToken(googleCredential);
     }
 
-    private String createToken(GoogleCredential googleCredential) {
+    private String createToken(GoogleCredentials googleCredential) {
         CreateTokenAction createTokenAction = new CreateTokenAction(googleCredential);
         CreateTokenResponse createTokenResponse = createTokenAction.execute();
         String accessToken = createTokenResponse.getAccessToken();

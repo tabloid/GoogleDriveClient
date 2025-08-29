@@ -1,6 +1,6 @@
 package com.hvo;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.hvo.actions.directory.DirectoryActions;
 import com.hvo.responses.directory.CreateDirectoryResponse;
 import com.hvo.responses.directory.DeleteDirectoryResponse;
@@ -13,7 +13,7 @@ import java.io.InputStream;
 public class App {
 
     public static void main(String[] args) throws IOException {
-        GoogleCredential googleCredential = createGoogleCredential();
+        GoogleCredentials googleCredential = createGoogleCredential();
         DirectoryActions directoryActions = new DirectoryActions(googleCredential);
 
         GetDirectoryListResponse getDirectoryListResponse = directoryActions.getDirectoryList();
@@ -29,10 +29,10 @@ public class App {
         System.out.println();
     }
 
-    private static GoogleCredential createGoogleCredential() throws IOException {
+    private static GoogleCredentials createGoogleCredential() throws IOException {
         String resourceName = "gdrive-storage-297122-e20587d1d42a.json";
         InputStream inputStream = App.class.getClassLoader().getResourceAsStream(resourceName);
-        return GoogleCredential.fromStream(inputStream);
+        return GoogleCredentials.fromStream(inputStream);
     }
 
 }
