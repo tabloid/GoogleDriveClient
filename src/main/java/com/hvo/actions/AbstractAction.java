@@ -3,13 +3,13 @@ package com.hvo.actions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hvo.requests.Request;
 import com.hvo.responses.Response;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public abstract class AbstractAction<T extends Response> implements Action<T> {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private final Log logger = LogFactory.getLog(this.getClass());
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     protected T execute(Request request, Class<T> responseClazz) {
         try {
