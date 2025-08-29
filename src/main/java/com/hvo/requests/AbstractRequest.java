@@ -9,7 +9,8 @@ public abstract class AbstractRequest implements Request {
 
     protected void logCurl() {
         String className = this.getClass().getName();
-        logger.debug(className + ": " + getCurl());
+        String message = className + ": " + this.getCurl();
+        logger.debug(message);
     }
 
     protected abstract String getCurl();
