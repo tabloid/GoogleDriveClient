@@ -1,21 +1,21 @@
 package com.hvo.actions.token;
 
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.actions.AbstractAction;
 import com.hvo.requests.token.CreateTokenRequest;
 import com.hvo.responses.token.CreateTokenResponse;
 
 public class CreateTokenAction extends AbstractAction<CreateTokenResponse> {
 
-    private final GoogleCredentials credential;
+    private final ServiceAccountCredentials serviceAccountCredentials;
 
-    public CreateTokenAction(GoogleCredentials credential) {
-        this.credential = credential;
+    public CreateTokenAction(ServiceAccountCredentials serviceAccountCredentials) {
+        this.serviceAccountCredentials = serviceAccountCredentials;
     }
 
     @Override
     public CreateTokenResponse execute() {
-        CreateTokenRequest createTokenRequest = new CreateTokenRequest(credential);
+        CreateTokenRequest createTokenRequest = new CreateTokenRequest(serviceAccountCredentials);
         return execute(createTokenRequest, CreateTokenResponse.class);
     }
 

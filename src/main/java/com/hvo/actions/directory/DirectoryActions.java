@@ -1,6 +1,6 @@
 package com.hvo.actions.directory;
 
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.actions.token.CreateTokenAction;
 import com.hvo.responses.directory.CreateDirectoryResponse;
 import com.hvo.responses.directory.DeleteDirectoryResponse;
@@ -12,12 +12,12 @@ public class DirectoryActions {
 
     private final String accessToken;
 
-    public DirectoryActions(GoogleCredentials googleCredential) {
-        this.accessToken = createToken(googleCredential);
+    public DirectoryActions(ServiceAccountCredentials serviceAccountCredentials) {
+        this.accessToken = createToken(serviceAccountCredentials);
     }
 
-    private String createToken(GoogleCredentials googleCredential) {
-        CreateTokenAction createTokenAction = new CreateTokenAction(googleCredential);
+    private String createToken(ServiceAccountCredentials serviceAccountCredentials) {
+        CreateTokenAction createTokenAction = new CreateTokenAction(serviceAccountCredentials);
         CreateTokenResponse createTokenResponse = createTokenAction.execute();
         String accessToken = createTokenResponse.getAccessToken();
         return accessToken;
