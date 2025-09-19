@@ -30,7 +30,7 @@ public class DirectoryRequestsTest {
     public void getDirectoryRequestTest() {
         GetDirectoryRequest request = new GetDirectoryRequest(accessToken, directoryId);
         String curl = request.getCurl();
-        String expectedCurl = "curl https://www.googleapis.com/drive/v3/files/someDirectoryId?fields=* --request GET --verbose  --header 'Authorization: Bearer someToken' --header 'Accept: application/json'";
+        String expectedCurl = "curl https://www.googleapis.com/drive/v3/files/someDirectoryId?fields=* --request GET --verbose  --header 'Accept: application/json' --header 'Authorization: Bearer someToken'";
         Assert.assertEquals(expectedCurl, curl);
     }
 
