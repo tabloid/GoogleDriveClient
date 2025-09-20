@@ -5,7 +5,6 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
-import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 
@@ -39,11 +38,6 @@ public class CreateTokenRequest extends AbstractRequest {
             logger.error(ex);
         }
         return httpPost;
-    }
-
-    @Override
-    protected String getCurl() {
-        return CurlUtil.convertToCurlString(getRequest());
     }
 
     private String createJWT(ServiceAccountCredentials serviceAccountCredentials) {

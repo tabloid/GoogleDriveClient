@@ -2,7 +2,6 @@ package com.hvo.requests.directory;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
-import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpDelete;
 
 public class DeleteDirectoryRequest extends AbstractRequest {
@@ -18,11 +17,6 @@ public class DeleteDirectoryRequest extends AbstractRequest {
                 .append(directoryId)
                 .toString();
         logCurl();
-    }
-
-    @Override
-    protected String getCurl() {
-        return CurlUtil.convertToCurlString(getRequest());
     }
 
     @Override

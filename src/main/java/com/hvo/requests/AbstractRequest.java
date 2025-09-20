@@ -1,5 +1,6 @@
 package com.hvo.requests;
 
+import com.hvo.requests.util.CurlUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,5 +14,7 @@ public abstract class AbstractRequest implements Request {
         logger.debug(message);
     }
 
-    protected abstract String getCurl();
+    public String getCurl() {
+        return CurlUtil.convertToCurlString(getRequest());
+    }
 }

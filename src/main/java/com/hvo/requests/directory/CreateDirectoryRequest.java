@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
-import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 
@@ -32,11 +31,6 @@ public class CreateDirectoryRequest extends AbstractRequest {
 
         String jsonString = json.toString();
         return jsonString;
-    }
-
-    @Override
-    protected String getCurl() {
-        return CurlUtil.convertToCurlString(getRequest());
     }
 
     @Override

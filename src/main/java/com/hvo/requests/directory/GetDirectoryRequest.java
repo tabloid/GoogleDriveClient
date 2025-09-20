@@ -2,7 +2,6 @@ package com.hvo.requests.directory;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
-import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpGet;
 
 public class GetDirectoryRequest extends AbstractRequest {
@@ -19,11 +18,6 @@ public class GetDirectoryRequest extends AbstractRequest {
                 .append("?fields=*")
                 .toString();
         logCurl();
-    }
-
-    @Override
-    protected String getCurl() {
-        return CurlUtil.convertToCurlString(getRequest());
     }
 
     @Override

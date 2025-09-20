@@ -2,7 +2,6 @@ package com.hvo.requests.directory;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
-import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpGet;
 
 public class GetDirectoryListRequest extends AbstractRequest {
@@ -17,11 +16,6 @@ public class GetDirectoryListRequest extends AbstractRequest {
                 .append("?q=mimeType%20%3D%20%27application%2Fvnd.google-apps.folder%27")
                 .toString();
         logCurl();
-    }
-
-    @Override
-    protected String getCurl() {
-        return CurlUtil.convertToCurlString(getRequest());
     }
 
     @Override
