@@ -3,9 +3,9 @@ package com.hvo.requests.token;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.hvo.models.RequestMethod;
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
+import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 
@@ -16,7 +16,6 @@ import java.util.Date;
 
 public class CreateTokenRequest extends AbstractRequest {
 
-    private final String requestMethod = RequestMethod.POST.toString();
     private final String data;
 
     public CreateTokenRequest(ServiceAccountCredentials serviceAccountCredentials) {
@@ -44,13 +43,7 @@ public class CreateTokenRequest extends AbstractRequest {
 
     @Override
     protected String getCurl() {
-        return new StringBuilder()
-                .append("curl " + API.TOKEN)
-                .append(" --request " + requestMethod)
-                .append(" --verbose ")
-                .append(" --data '" + data)
-                .append("'")
-                .toString();
+        return CurlUtil.convertToCurlString(getRequest());
     }
 
     private String createJWT(ServiceAccountCredentials serviceAccountCredentials) {
