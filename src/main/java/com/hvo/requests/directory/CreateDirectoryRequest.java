@@ -2,18 +2,16 @@ package com.hvo.requests.directory;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.hvo.models.RequestMethod;
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
+import com.hvo.requests.util.CurlUtil;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.StringEntity;
 
 import java.io.UnsupportedEncodingException;
 
 public class CreateDirectoryRequest extends AbstractRequest {
 
-    private final String requestMethod = RequestMethod.POST.toString();
     private final String accessToken;
     private final String data;
 
@@ -38,24 +36,21 @@ public class CreateDirectoryRequest extends AbstractRequest {
 
     @Override
     protected String getCurl() {
-        return new StringBuilder()
-                .append("curl " + API.FILES)
-                .append(" --request " + requestMethod)
-                .append(" --verbose ")
-                .append(" --header 'Authorization: Bearer " + accessToken).append("'")
-                .append(" --header 'Accept: application/json'")
-                .append(" --header 'Content-Type: application/json'")
-                .append(" --data '" + data).append("'")
-                .toString();
+        return CurlUtil.convertToCurlString(getRequest());
     }
 
     @Override
-    public HttpPost getRequest() throws UnsupportedEncodingException {
+    public HttpPost getRequest() {
         HttpPost httpPost = new HttpPost(API.FILES);
-        httpPost.setEntity(new StringEntity(data));
-        httpPost.setHeader("Authorization", "Bearer " + accessToken);
-        httpPost.setHeader("Accept", "application/json");
-        httpPost.setHeader("Content-type", "application/json");
+        httpPost.addHeader("Accept", "application/json");
+        httpPost.addHeader("Authorization", "Bearer " + accessToken);
+        httpPost.addHeader("Content-type", "application/json");
+        try {
+            StringEntity stringEntity = new StringEntity(data);
+            httpPost.setEntity(stringEntity);
+        } catch (UnsupportedEncodingException ex) {
+            logger.error(ex);
+        }
         return httpPost;
     }
 }

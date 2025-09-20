@@ -29,11 +29,16 @@ public class CreateTokenRequest extends AbstractRequest {
     }
 
     @Override
-    public HttpPost getRequest() throws UnsupportedEncodingException {
+    public HttpPost getRequest() {
         HttpPost httpPost = new HttpPost(API.TOKEN);
-        httpPost.setEntity(new StringEntity(data));
-        httpPost.setHeader("Accept", "application/json");
-        httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
+        httpPost.addHeader("Accept", "application/json");
+        httpPost.addHeader("Content-type", "application/x-www-form-urlencoded");
+        try {
+            StringEntity stringEntity = new StringEntity(data);
+            httpPost.setEntity(stringEntity);
+        } catch (UnsupportedEncodingException ex) {
+            logger.error(ex);
+        }
         return httpPost;
     }
 
