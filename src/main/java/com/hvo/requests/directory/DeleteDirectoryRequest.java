@@ -28,7 +28,7 @@ public class DeleteDirectoryRequest extends AbstractRequest {
     @Override
     public HttpDelete getRequest() {
         HttpDelete httpDelete = new HttpDelete(url);
-        httpDelete.setHeader("Authorization", "Bearer " + accessToken);
+        httpDelete.addHeader("Authorization", "Bearer " + accessToken);
         return httpDelete;
     }
 }

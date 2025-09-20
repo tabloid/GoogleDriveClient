@@ -27,8 +27,8 @@ public class GetDirectoryListRequest extends AbstractRequest {
     @Override
     public HttpGet getRequest() {
         HttpGet httpGet = new HttpGet(url);
-        httpGet.setHeader("Accept", "application/json");
-        httpGet.setHeader("Authorization", "Bearer " + accessToken);
+        httpGet.addHeader("Accept", "application/json");
+        httpGet.addHeader("Authorization", "Bearer " + accessToken);
         return httpGet;
     }
 
