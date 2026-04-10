@@ -1,15 +1,15 @@
-package com.hvo.requests.directory;
+package com.hvo.lib.directory.delete;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
 import org.apache.http.client.methods.HttpDelete;
 
-public class DeleteDirectoryRequest extends AbstractRequest {
+class DeleteDirectoryRequest extends AbstractRequest {
 
     private final String url;
     private final String accessToken;
 
-    public DeleteDirectoryRequest(String accessToken, String directoryId) {
+    DeleteDirectoryRequest(String accessToken, String directoryId) {
         this.accessToken = accessToken;
         this.url = new StringBuilder()
                 .append(API.FILES)

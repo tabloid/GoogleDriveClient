@@ -1,8 +1,6 @@
-package com.hvo.actions.directory;
+package com.hvo.lib.directory.delete;
 
 import com.hvo.actions.AbstractAction;
-import com.hvo.requests.directory.DeleteDirectoryRequest;
-import com.hvo.responses.directory.DeleteDirectoryResponse;
 
 class DeleteDirectoryAction extends AbstractAction<DeleteDirectoryResponse> {
 
