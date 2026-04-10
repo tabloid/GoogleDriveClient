@@ -1,4 +1,4 @@
-package com.hvo.requests.token;
+package com.hvo.lib.token.create;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -8,13 +8,13 @@ import java.security.PrivateKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Date;
 
-public class SignedJWT {
+class SignedJWT {
     private static final long LIVELINESS_DURATION = 3600;
     private final String issuer;
     private final String audience;
     private final PrivateKey privateKey;
 
-    public SignedJWT(ServiceAccountCredentials serviceAccountCredentials) {
+    SignedJWT(ServiceAccountCredentials serviceAccountCredentials) {
         this.issuer = serviceAccountCredentials.getClientEmail();
         this.audience = serviceAccountCredentials.getTokenServerUri().toString();
         this.privateKey = serviceAccountCredentials.getPrivateKey();

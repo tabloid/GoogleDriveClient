@@ -2,7 +2,6 @@ package com.hvo.lib.token.create;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.actions.AbstractAction;
-import com.hvo.requests.token.SignedJWT;
 
 class CreateTokenAction extends AbstractAction<CreateTokenResponse> {
 
