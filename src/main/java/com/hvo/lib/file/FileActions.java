@@ -1,9 +1,10 @@
-package com.hvo.actions.file;
+package com.hvo.lib.file;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.hvo.lib.file.getlist.GetFileListExecutor;
+import com.hvo.lib.file.getlist.GetFileListResponse;
 import com.hvo.lib.token.create.CreateTokenExecutor;
 import com.hvo.lib.token.create.CreateTokenResponse;
-import com.hvo.responses.file.GetFileListResponse;
 
 public class FileActions {
 
@@ -20,7 +21,7 @@ public class FileActions {
     }
 
     public GetFileListResponse getFileList() {
-        return new GetFileListAction(accessToken).execute();
+        return GetFileListExecutor.getFileList(accessToken);
     }
 
 
