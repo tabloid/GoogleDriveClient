@@ -1,4 +1,4 @@
-package com.hvo.requests.token;
+package com.hvo.lib.token.create;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
@@ -7,11 +7,11 @@ import org.apache.http.entity.StringEntity;
 
 import java.io.UnsupportedEncodingException;
 
-public class CreateTokenRequest extends AbstractRequest {
+class CreateTokenRequest extends AbstractRequest {
 
     private final String data;
 
-    public CreateTokenRequest(String signedJwtString) {
+    CreateTokenRequest(String signedJwtString) {
 
         this.data = new StringBuilder()
                 .append("grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&")

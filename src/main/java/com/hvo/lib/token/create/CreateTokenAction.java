@@ -1,16 +1,14 @@
-package com.hvo.actions.token;
+package com.hvo.lib.token.create;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.actions.AbstractAction;
-import com.hvo.requests.token.CreateTokenRequest;
 import com.hvo.requests.token.SignedJWT;
-import com.hvo.responses.token.CreateTokenResponse;
 
-public class CreateTokenAction extends AbstractAction<CreateTokenResponse> {
+class CreateTokenAction extends AbstractAction<CreateTokenResponse> {
 
     private final ServiceAccountCredentials serviceAccountCredentials;
 
-    public CreateTokenAction(ServiceAccountCredentials serviceAccountCredentials) {
+    CreateTokenAction(ServiceAccountCredentials serviceAccountCredentials) {
         this.serviceAccountCredentials = serviceAccountCredentials;
     }
 

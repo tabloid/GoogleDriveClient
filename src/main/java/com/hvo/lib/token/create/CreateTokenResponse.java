@@ -1,4 +1,4 @@
-package com.hvo.responses.token;
+package com.hvo.lib.token.create;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hvo.responses.AbstractResponse;
