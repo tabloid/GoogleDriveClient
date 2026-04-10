@@ -1,12 +1,12 @@
 package com.hvo;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.hvo.actions.directory.DirectoryActions;
+import com.hvo.lib.directory.DirectoryActions;
 import com.hvo.actions.file.FileActions;
-import com.hvo.responses.directory.CreateDirectoryResponse;
-import com.hvo.responses.directory.DeleteDirectoryResponse;
-import com.hvo.responses.directory.GetDirectoryListResponse;
-import com.hvo.responses.directory.GetDirectoryResponse;
+import com.hvo.lib.directory.create.CreateDirectoryResponse;
+import com.hvo.lib.directory.delete.DeleteDirectoryResponse;
+import com.hvo.lib.directory.getlist.GetDirectoryListResponse;
+import com.hvo.lib.directory.get.GetDirectoryResponse;
 import com.hvo.responses.file.GetFileListResponse;
 
 import java.io.IOException;
