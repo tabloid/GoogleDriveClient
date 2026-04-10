@@ -1,4 +1,4 @@
-package com.hvo.requests.directory;
+package com.hvo.lib.directory.create;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -9,12 +9,12 @@ import org.apache.http.entity.StringEntity;
 
 import java.io.UnsupportedEncodingException;
 
-public class CreateDirectoryRequest extends AbstractRequest {
+class CreateDirectoryRequest extends AbstractRequest {
 
     private final String accessToken;
     private final String data;
 
-    public CreateDirectoryRequest(String accessToken, String directoryName) {
+    CreateDirectoryRequest(String accessToken, String directoryName) {
         this.accessToken = accessToken;
         this.data = createData(directoryName);
         logCurl();

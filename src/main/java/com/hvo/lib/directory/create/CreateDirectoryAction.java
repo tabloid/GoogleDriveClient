@@ -1,8 +1,6 @@
-package com.hvo.actions.directory;
+package com.hvo.lib.directory.create;
 
 import com.hvo.actions.AbstractAction;
-import com.hvo.requests.directory.CreateDirectoryRequest;
-import com.hvo.responses.directory.CreateDirectoryResponse;
 
 class CreateDirectoryAction extends AbstractAction<CreateDirectoryResponse> {
 
