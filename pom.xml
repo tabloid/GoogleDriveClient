@@ -46,7 +46,7 @@
             <artifactId>log4j-api</artifactId>
             <version>2.21.0</version>
         </dependency>
-        <!-- bridge для commons-logging (щоб HttpClient логував через log4j2) -->
+        <!-- bridge для commons-logging (to make HttpClient log via log4j2) -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-jcl</artifactId>
