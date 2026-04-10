@@ -17,8 +17,8 @@ public class CreateTokenAction extends AbstractAction<CreateTokenResponse> {
     @Override
     public CreateTokenResponse execute() {
         SignedJWT signedJWT = new SignedJWT(serviceAccountCredentials);
-        String signedJwtString = signedJWT.createJWT();
-        CreateTokenRequest createTokenRequest = new CreateTokenRequest(signedJwtString);
+        String signedJWTString = signedJWT.createJWTString();
+        CreateTokenRequest createTokenRequest = new CreateTokenRequest(signedJWTString);
         return execute(createTokenRequest, CreateTokenResponse.class);
     }
 
