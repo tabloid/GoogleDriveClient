@@ -1,9 +1,9 @@
 package com.hvo.actions.file;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.hvo.actions.token.CreateTokenAction;
+import com.hvo.lib.token.create.CreateTokenExecutor;
+import com.hvo.lib.token.create.CreateTokenResponse;
 import com.hvo.responses.file.GetFileListResponse;
-import com.hvo.responses.token.CreateTokenResponse;
 
 public class FileActions {
 
@@ -14,8 +14,7 @@ public class FileActions {
     }
 
     private String createToken(ServiceAccountCredentials serviceAccountCredentials) {
-        CreateTokenAction createTokenAction = new CreateTokenAction(serviceAccountCredentials);
-        CreateTokenResponse createTokenResponse = createTokenAction.execute();
+        CreateTokenResponse createTokenResponse = CreateTokenExecutor.createToken(serviceAccountCredentials);
         String accessToken = createTokenResponse.getAccessToken();
         return accessToken;
     }
