@@ -1,4 +1,4 @@
-package com.hvo.responses.file;
+package com.hvo.lib.file.getlist;
 
 import com.hvo.models.File;
 import com.hvo.responses.AbstractResponse;

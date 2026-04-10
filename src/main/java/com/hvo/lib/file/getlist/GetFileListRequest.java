@@ -1,15 +1,15 @@
-package com.hvo.requests.file;
+package com.hvo.lib.file.getlist;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
 import org.apache.http.client.methods.HttpGet;
 
-public class GetFileListRequest extends AbstractRequest {
+class GetFileListRequest extends AbstractRequest {
 
     private final String url;
     private final String accessToken;
 
-    public GetFileListRequest(String accessToken) {
+    GetFileListRequest(String accessToken) {
         this.accessToken = accessToken;
         this.url = new StringBuilder()
                 .append(API.FILES)
