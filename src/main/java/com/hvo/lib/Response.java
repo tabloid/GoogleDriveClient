@@ -1,4 +1,4 @@
-package com.hvo.responses;
+package com.hvo.lib;
 
 public interface Response {
 

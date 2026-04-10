@@ -1,7 +1,7 @@
 package com.hvo.lib.directory.getlist;
 
 import com.hvo.models.File;
-import com.hvo.responses.AbstractResponse;
+import com.hvo.lib.AbstractResponse;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

@@ -1,6 +1,6 @@
 package com.hvo.lib.directory.create;
 
-import com.hvo.actions.AbstractAction;
+import com.hvo.lib.AbstractAction;
 
 class CreateDirectoryAction extends AbstractAction<CreateDirectoryResponse> {
 

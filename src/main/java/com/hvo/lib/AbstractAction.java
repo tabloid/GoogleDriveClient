@@ -1,8 +1,6 @@
-package com.hvo.actions;
+package com.hvo.lib;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hvo.requests.Request;
-import com.hvo.responses.Response;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;

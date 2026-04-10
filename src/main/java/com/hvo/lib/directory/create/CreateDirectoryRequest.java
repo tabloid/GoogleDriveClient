@@ -3,7 +3,7 @@ package com.hvo.lib.directory.create;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.hvo.requests.API;
-import com.hvo.requests.AbstractRequest;
+import com.hvo.lib.AbstractRequest;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 

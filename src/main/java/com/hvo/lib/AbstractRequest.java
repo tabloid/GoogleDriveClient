@@ -1,4 +1,4 @@
-package com.hvo.requests;
+package com.hvo.lib;
 
 import com.hvo.requests.util.CurlUtil;
 import org.apache.logging.log4j.LogManager;

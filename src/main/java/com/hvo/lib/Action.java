@@ -1,6 +1,4 @@
-package com.hvo.actions;
-
-import com.hvo.responses.Response;
+package com.hvo.lib;
 
 public interface Action<T extends Response> {
     T execute();
