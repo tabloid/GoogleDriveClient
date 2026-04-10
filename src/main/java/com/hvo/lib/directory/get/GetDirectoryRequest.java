@@ -1,15 +1,15 @@
-package com.hvo.requests.directory;
+package com.hvo.lib.directory.get;
 
 import com.hvo.requests.API;
 import com.hvo.requests.AbstractRequest;
 import org.apache.http.client.methods.HttpGet;
 
-public class GetDirectoryRequest extends AbstractRequest {
+class GetDirectoryRequest extends AbstractRequest {
 
     private final String url;
     private final String accessToken;
 
-    public GetDirectoryRequest(String accessToken, String directoryId) {
+    GetDirectoryRequest(String accessToken, String directoryId) {
         this.accessToken = accessToken;
         this.url = new StringBuilder()
                 .append(API.FILES)

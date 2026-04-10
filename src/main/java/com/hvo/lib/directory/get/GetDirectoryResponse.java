@@ -1,4 +1,4 @@
-package com.hvo.responses.directory;
+package com.hvo.lib.directory.get;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hvo.responses.AbstractResponse;
