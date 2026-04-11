@@ -1,6 +1,5 @@
-package com.hvo.lib;
+package com.hvo.lib.core;
 
-import com.hvo.lib.util.CurlUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

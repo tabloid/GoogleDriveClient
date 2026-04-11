@@ -1,7 +1,7 @@
 package com.hvo.lib.token.create;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.hvo.lib.AbstractResponse;
+import com.hvo.lib.core.AbstractResponse;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

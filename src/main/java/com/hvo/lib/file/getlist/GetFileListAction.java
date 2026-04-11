@@ -1,6 +1,6 @@
 package com.hvo.lib.file.getlist;
 
-import com.hvo.lib.AbstractAction;
+import com.hvo.lib.core.AbstractAction;
 
 class GetFileListAction extends AbstractAction<GetFileListResponse> {
 

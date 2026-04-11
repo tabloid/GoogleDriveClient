@@ -1,4 +1,4 @@
-package com.hvo.lib;
+package com.hvo.lib.core;
 
 import org.apache.http.client.methods.HttpRequestBase;
 

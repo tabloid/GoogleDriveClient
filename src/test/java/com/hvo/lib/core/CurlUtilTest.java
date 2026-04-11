@@ -1,4 +1,4 @@
-package com.hvo.requests.util;
+package com.hvo.lib.core;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 
-import static com.hvo.requests.util.CurlUtil.convertToCurlString;
+import static com.hvo.lib.core.CurlUtil.convertToCurlString;
 
 public class CurlUtilTest {
 

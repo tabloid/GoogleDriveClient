@@ -1,7 +1,7 @@
 package com.hvo.lib.directory.get;
 
 import com.hvo.lib.constants.API;
-import com.hvo.lib.AbstractRequest;
+import com.hvo.lib.core.AbstractRequest;
 import org.apache.http.client.methods.HttpGet;
 
 class GetDirectoryRequest extends AbstractRequest {

@@ -1,4 +1,4 @@
-package com.hvo.lib.util;
+package com.hvo.lib.core;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public class CurlUtil {
+class CurlUtil {
 
     private static final Logger logger = LogManager.getLogger(CurlUtil.class);
 

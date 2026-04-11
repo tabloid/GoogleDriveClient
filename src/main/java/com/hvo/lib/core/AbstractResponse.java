@@ -1,4 +1,4 @@
-package com.hvo.lib;
+package com.hvo.lib.core;
 
 import lombok.ToString;
 

@@ -1,4 +1,4 @@
-package com.hvo.lib;
+package com.hvo.lib.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;

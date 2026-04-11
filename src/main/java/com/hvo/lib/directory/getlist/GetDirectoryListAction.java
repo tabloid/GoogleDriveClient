@@ -1,6 +1,6 @@
 package com.hvo.lib.directory.getlist;
 
-import com.hvo.lib.AbstractAction;
+import com.hvo.lib.core.AbstractAction;
 
 class GetDirectoryListAction extends AbstractAction<GetDirectoryListResponse> {
 
