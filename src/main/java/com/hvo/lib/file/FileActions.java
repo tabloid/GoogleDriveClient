@@ -1,6 +1,8 @@
 package com.hvo.lib.file;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.hvo.lib.file.get.GetFileExecutor;
+import com.hvo.lib.file.get.GetFileResponse;
 import com.hvo.lib.file.getlist.GetFileListExecutor;
 import com.hvo.lib.file.getlist.GetFileListResponse;
 import com.hvo.lib.token.create.CreateTokenExecutor;
@@ -16,8 +18,11 @@ public class FileActions {
 
     private String createToken(ServiceAccountCredentials serviceAccountCredentials) {
         CreateTokenResponse createTokenResponse = CreateTokenExecutor.createToken(serviceAccountCredentials);
-        String accessToken = createTokenResponse.getAccessToken();
-        return accessToken;
+        return createTokenResponse.getAccessToken();
+    }
+
+    public GetFileResponse getFile(String fileId) {
+        return GetFileExecutor.getFile(accessToken, fileId);
     }
 
     public GetFileListResponse getFileList() {

@@ -7,6 +7,7 @@ import com.hvo.lib.directory.delete.DeleteDirectoryResponse;
 import com.hvo.lib.directory.get.GetDirectoryResponse;
 import com.hvo.lib.directory.getlist.GetDirectoryListResponse;
 import com.hvo.lib.file.FileActions;
+import com.hvo.lib.file.get.GetFileResponse;
 import com.hvo.lib.file.getlist.GetFileListResponse;
 
 import java.io.IOException;
@@ -37,6 +38,8 @@ public class App {
 
         GetFileListResponse getFileListResponse = fileActions.getFileList();
         String fileId = getFileListResponse.getFiles().get(0).getId();
+
+        GetFileResponse getFileResponse = fileActions.getFile(fileId);
         System.out.println("END FILE TESTS");
     }
 
