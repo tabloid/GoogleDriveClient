@@ -1,4 +1,4 @@
-package com.hvo.lib.file;
+package com.hvo.lib.api;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.lib.file.create.CreateFileExecutor;
@@ -14,7 +14,7 @@ public class FileActions {
 
     private final String accessToken;
 
-    public FileActions(ServiceAccountCredentials serviceAccountCredentials) {
+    FileActions(ServiceAccountCredentials serviceAccountCredentials) {
         this.accessToken = createToken(serviceAccountCredentials);
     }
 

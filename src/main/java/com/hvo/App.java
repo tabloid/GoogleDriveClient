@@ -1,12 +1,13 @@
 package com.hvo;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.hvo.lib.directory.DirectoryActions;
+import com.hvo.lib.api.DirectoryActions;
+import com.hvo.lib.api.GoogleDriveClient;
 import com.hvo.lib.directory.create.CreateDirectoryResponse;
 import com.hvo.lib.directory.delete.DeleteDirectoryResponse;
 import com.hvo.lib.directory.get.GetDirectoryResponse;
 import com.hvo.lib.directory.getlist.GetDirectoryListResponse;
-import com.hvo.lib.file.FileActions;
+import com.hvo.lib.api.FileActions;
 import com.hvo.lib.file.create.CreateFileResponse;
 import com.hvo.lib.file.get.GetFileResponse;
 import com.hvo.lib.file.getlist.GetFileListResponse;
@@ -18,9 +19,10 @@ public class App {
 
     public static void main(String[] args) throws IOException {
         ServiceAccountCredentials serviceAccountCredentials = createServiceAccountCredentials();
+        GoogleDriveClient client = new GoogleDriveClient(serviceAccountCredentials);
 
         System.out.println("START DIRECTORY TESTS");
-        DirectoryActions directoryActions = new DirectoryActions(serviceAccountCredentials);
+        DirectoryActions directoryActions = client.getDirectoryActions();
 
         GetDirectoryListResponse getDirectoryListResponse = directoryActions.getDirectoryList();
         String directoryId = getDirectoryListResponse.getFiles().get(0).getId();
@@ -35,7 +37,7 @@ public class App {
         System.out.println("END DIRECTORY TESTS");
 
         System.out.println("START FILE TESTS");
-        FileActions fileActions = new FileActions(serviceAccountCredentials);
+        FileActions fileActions = client.getFileActions();
 
         GetFileListResponse getFileListResponse = fileActions.getFileList();
         String fileId = getFileListResponse.getFiles().get(0).getId();

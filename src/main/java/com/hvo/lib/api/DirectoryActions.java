@@ -1,4 +1,4 @@
-package com.hvo.lib.directory;
+package com.hvo.lib.api;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.lib.directory.create.CreateDirectoryExecutor;
@@ -16,14 +16,13 @@ public class DirectoryActions {
 
     private final String accessToken;
 
-    public DirectoryActions(ServiceAccountCredentials serviceAccountCredentials) {
+    DirectoryActions(ServiceAccountCredentials serviceAccountCredentials) {
         this.accessToken = createToken(serviceAccountCredentials);
     }
 
     private String createToken(ServiceAccountCredentials serviceAccountCredentials) {
         CreateTokenResponse createTokenResponse = CreateTokenExecutor.createToken(serviceAccountCredentials);
-        String accessToken = createTokenResponse.getAccessToken();
-        return accessToken;
+        return createTokenResponse.getAccessToken();
     }
 
     public CreateDirectoryResponse createDirectory(String directoryName) {
