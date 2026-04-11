@@ -1,9 +1,9 @@
-package com.hvo.requests.token;
+package com.hvo.lib.token.create;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TokenRequestsTest {
+public class CreateTokenRequestTest {
 
     @Test
     public void createTokenRequestTest() {
