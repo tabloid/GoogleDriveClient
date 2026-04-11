@@ -1,4 +1,4 @@
-package com.hvo.lib.api;
+package com.hvo.api;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.lib.file.create.CreateFileExecutor;

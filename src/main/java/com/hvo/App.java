@@ -1,8 +1,8 @@
 package com.hvo;
 
-import com.hvo.lib.api.DirectoryActions;
-import com.hvo.lib.api.FileActions;
-import com.hvo.lib.api.GoogleDriveClient;
+import com.hvo.api.DirectoryActions;
+import com.hvo.api.FileActions;
+import com.hvo.api.GoogleDriveClient;
 import com.hvo.lib.directory.create.CreateDirectoryResponse;
 import com.hvo.lib.directory.delete.DeleteDirectoryResponse;
 import com.hvo.lib.directory.get.GetDirectoryResponse;
