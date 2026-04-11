@@ -1,6 +1,6 @@
 package com.hvo.lib.file.getlist;
 
-import com.hvo.requests.API;
+import com.hvo.lib.constants.API;
 import com.hvo.lib.AbstractRequest;
 import org.apache.http.client.methods.HttpGet;
 

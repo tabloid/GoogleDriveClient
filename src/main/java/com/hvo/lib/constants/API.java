@@ -1,4 +1,4 @@
-package com.hvo.requests;
+package com.hvo.lib.constants;
 
 public class API {
     public static final String TOKEN = "https://oauth2.googleapis.com/token";

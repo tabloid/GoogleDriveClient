@@ -1,4 +1,4 @@
-package com.hvo.lib.model;
+package com.hvo.lib.constants;
 
 public enum RequestMethod {
 
