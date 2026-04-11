@@ -1,4 +1,4 @@
-package com.hvo.models;
+package com.hvo.lib.model;
 
 import lombok.Getter;
 import lombok.Setter;
