@@ -1,25 +1,21 @@
 package com.hvo;
 
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.hvo.lib.api.DirectoryActions;
+import com.hvo.lib.api.FileActions;
 import com.hvo.lib.api.GoogleDriveClient;
 import com.hvo.lib.directory.create.CreateDirectoryResponse;
 import com.hvo.lib.directory.delete.DeleteDirectoryResponse;
 import com.hvo.lib.directory.get.GetDirectoryResponse;
 import com.hvo.lib.directory.getlist.GetDirectoryListResponse;
-import com.hvo.lib.api.FileActions;
 import com.hvo.lib.file.create.CreateFileResponse;
 import com.hvo.lib.file.get.GetFileResponse;
 import com.hvo.lib.file.getlist.GetFileListResponse;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 public class App {
 
-    public static void main(String[] args) throws IOException {
-        ServiceAccountCredentials serviceAccountCredentials = createServiceAccountCredentials();
-        GoogleDriveClient client = new GoogleDriveClient(serviceAccountCredentials);
+    public static void main(String[] args) {
+        String resourceName = "gdrive-storage-297122-e20587d1d42a.json";
+        GoogleDriveClient client = new GoogleDriveClient(resourceName);
 
         System.out.println("START DIRECTORY TESTS");
         DirectoryActions directoryActions = client.getDirectoryActions();
@@ -49,12 +45,6 @@ public class App {
         CreateFileResponse createFileResponse = fileActions.createFile(fileName);
         fileId = createFileResponse.getId();
         System.out.println("END FILE TESTS");
-    }
-
-    private static ServiceAccountCredentials createServiceAccountCredentials() throws IOException {
-        String resourceName = "gdrive-storage-297122-e20587d1d42a.json";
-        InputStream inputStream = App.class.getClassLoader().getResourceAsStream(resourceName);
-        return ServiceAccountCredentials.fromStream(inputStream);
     }
 
 }
