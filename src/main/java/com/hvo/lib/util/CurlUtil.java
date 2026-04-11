@@ -1,4 +1,4 @@
-package com.hvo.requests.util;
+package com.hvo.lib.util;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -15,6 +15,9 @@ import java.nio.charset.StandardCharsets;
 public class CurlUtil {
 
     private static final Logger logger = LogManager.getLogger(CurlUtil.class);
+
+    private CurlUtil() {
+    }
 
     public static String convertToCurlString(HttpRequestBase request) {
         String requestMethod = request.getMethod();
