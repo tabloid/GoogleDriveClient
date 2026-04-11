@@ -1,4 +1,4 @@
-package com.hvo.requests.token;
+package com.hvo.lib.token.create;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import org.junit.Assert;
