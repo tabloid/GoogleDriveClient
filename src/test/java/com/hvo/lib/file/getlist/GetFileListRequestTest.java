@@ -1,13 +1,11 @@
-package com.hvo.requests.file;
+package com.hvo.lib.file.getlist;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class FileRequestsTest {
+public class GetFileListRequestTest {
 
     private static final String accessToken = "someToken";
-    private static final String fileName = "someFileName";
-    private static final String fileId = "someFileId";
 
     @Test
     public void getFileListRequestTest() {
